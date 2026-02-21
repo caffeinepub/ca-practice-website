@@ -1,0 +1,42 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-government-resources-section-component-that-displays-a-grid-of-quick-access-links-to-official-government-and-regulatory-websites-including-income-tax-department-roc-registrar-of-companies-mca-ministry-of-corporate-affairs-sebi-gst-portal-professional-tax-mahagst-rera-real-estate-regulatory-authority-and-share-market-portals-nse-bse-with-each-link-showing-an-icon-website-name-and-opening-in-a-new-tab",
+      "featureTitle": "Create a Government Resources section component that displays a grid of quick access links to official government and regulatory websites including Income Tax Department, ROC (Registrar of Companies), MCA (Ministry of Corporate Affairs), SEBI, GST Portal, Professional Tax, MahaGST, RERA (Real Estate Regulatory Authority), and share market portals (NSE/BSE), with each link showing an icon, website name, and opening in a new tab",
+      "files": [
+        "frontend/src/components/GovernmentResources.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-31"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-integrate-the-government-resources-section-into-the-main-app-tsx-layout-positioning-it-after-the-notifications-section-and-before-the-tax-calculators-section",
+      "featureTitle": "Integrate the Government Resources section into the main App.tsx layout, positioning it after the Notifications section and before the Tax Calculators section",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Navigation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-32"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

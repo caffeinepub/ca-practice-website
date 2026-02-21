@@ -1,0 +1,47 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add government resources section with official website links",
+  "requirements": [
+    {
+      "id": "REQ-31",
+      "summary": "Create a Government Resources section component that displays a grid of quick access links to official government and regulatory websites",
+      "acceptanceCriteria": [
+        "Government Resources section is displayed on the homepage",
+        "Each government website link includes an icon, website name, and description",
+        "Links include: Income Tax Department (https://www.incometax.gov.in/), ROC (https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html), MCA (https://www.mca.gov.in/), SEBI (https://www.sebi.gov.in/), GST Portal (https://www.gst.gov.in/), Professional Tax, MahaGST (https://mahagst.gov.in/), RERA (https://rera.maharashtra.gov.in/), NSE (https://www.nseindia.com/), and BSE (https://www.bseindia.com/)",
+        "All links open in a new browser tab",
+        "Section uses consistent styling with the existing emerald green and warm amber color scheme",
+        "Component is responsive and works on mobile devices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GovernmentResources.tsx",
+          "operation": "create",
+          "description": "Create a new Government Resources component that displays a grid of government and regulatory website quick access links. Each link card should include an icon from the generated icon set (frontend/public/assets/generated/govt-icons-set.dim_512x512.png), website name, brief description, and official URL. Use the emerald green and warm amber color scheme from index.css. Implement responsive grid layout (3 columns on desktop, 2 on tablet, 1 on mobile). Include links for: Income Tax Department, ROC, MCA, SEBI, GST Portal, Professional Tax, MahaGST, RERA, NSE, and BSE. All links must use target='_blank' and rel='noopener noreferrer' for security. Include lucide-react icons for external link indicators. Follow the same card-based design pattern used in Services.tsx and WhyChooseUs.tsx with hover effects and smooth transitions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-32",
+      "summary": "Integrate the Government Resources section into the main App.tsx layout between Notifications and Tax Calculators",
+      "acceptanceCriteria": [
+        "Government Resources section appears in the correct position in the page flow",
+        "Navigation menu is updated to include smooth scrolling to the Government Resources section if needed",
+        "Section maintains proper spacing with adjacent sections"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import the GovernmentResources component and add it to the layout after the Notifications section and before the TaxCalculators section. Wrap the component in a section element with an id='government-resources' for navigation purposes. Ensure proper spacing matches the existing section spacing pattern used throughout the application."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Add a 'Government Resources' navigation link to the navigation menu items array. Include the link between 'Notifications' and 'Tax Calculators' in the navigation order. Configure smooth scrolling behavior to the government-resources section id. Update the active section detection logic to highlight the Government Resources link when that section is in view. Ensure mobile menu includes the new navigation item."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "build_request",
+  "title": "Add government resources section with official website links",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-31",
+      "text": "Create a Government Resources section component that displays a grid of quick access links to official government and regulatory websites including Income Tax Department, ROC (Registrar of Companies), MCA (Ministry of Corporate Affairs), SEBI, GST Portal, Professional Tax, MahaGST, RERA (Real Estate Regulatory Authority), and share market portals (NSE/BSE), with each link showing an icon, website name, and opening in a new tab",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "add government websites and link\nIncome Tax department, ROc, MCA, SEBI, GST. Professional Tax, Mahagst, RERA, share market etc."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Government Resources section is displayed on the homepage",
+        "Each government website link includes an icon, website name, and description",
+        "Links include: Income Tax Department (https://www.incometax.gov.in/), ROC (https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html), MCA (https://www.mca.gov.in/), SEBI (https://www.sebi.gov.in/), GST Portal (https://www.gst.gov.in/), Professional Tax, MahaGST (https://mahagst.gov.in/), RERA (https://rera.maharashtra.gov.in/), NSE (https://www.nseindia.com/), and BSE (https://www.bseindia.com/)",
+        "All links open in a new browser tab",
+        "Section uses consistent styling with the existing emerald green and warm amber color scheme",
+        "Component is responsive and works on mobile devices"
+      ]
+    },
+    {
+      "id": "REQ-32",
+      "text": "Integrate the Government Resources section into the main App.tsx layout, positioning it after the Notifications section and before the Tax Calculators section",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Government Resources section appears in the correct position in the page flow",
+        "Navigation menu is updated to include smooth scrolling to the Government Resources section if needed",
+        "Section maintains proper spacing with adjacent sections"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use only official government website URLs",
+    "Maintain the existing emerald green and warm amber color scheme",
+    "Follow the existing component patterns and styling conventions",
+    "Ensure all external links open in new tabs for user convenience"
+  ],
+  "nonGoals": [
+    "Adding authentication or login functionality for government portals",
+    "Scraping or displaying live data from government websites",
+    "Creating backend storage for government website links",
+    "Implementing a content management system for the links"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Government/regulatory website icon set including icons for Income Tax, ROC, MCA, SEBI, GST, Professional Tax, RERA, and stock market symbols in a consistent style (govt-icons-set.dim_512x512.png)"
+    ],
+    "edits": []
+  }
+}
