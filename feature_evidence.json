@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-the-partners-component-ensure-the-static-partners-data-array-contains-exactly-5-partner-entries-remove-any-partner-entries-beyond-the-5th-so-that-no-more-than-5-partner-cards-are-ever-rendered-on-the-page",
-      "featureTitle": "In the Partners component, ensure the static partners data array contains exactly 5 partner entries. Remove any partner entries beyond the 5th so that no more than 5 partner cards are ever rendered on the page.",
+      "featureId": "feature-remove-the-government-notifications-circulars-section-from-the-website-this-includes-1-removing-the-notifications-component-from-app-tsx-2-removing-the-corresponding-navigation-link-entry-from-navigation-tsx-if-one-exists-for-this-section-and-3-ensuring-the-page-layout-remains-visually-coherent-after-removal",
+      "featureTitle": "Remove the Government Notifications & Circulars section from the website. This includes: (1) removing the <Notifications /> component from App.tsx, (2) removing the corresponding navigation link/entry from Navigation.tsx if one exists for this section, and (3) ensuring the page layout remains visually coherent after removal.",
       "files": [
-        "frontend/src/components/Partners.tsx"
+        "frontend/src/App.tsx",
+        "frontend/src/components/Navigation.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,25 +18,6 @@
       ],
       "testIds": [
         "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-if-the-backend-partner-data-fetched-via-usegetpartners-returns-more-than-5-partners-cap-the-rendered-list-to-the-first-5-entries-on-the-frontend-so-the-ui-never-shows-more-than-5-partners-regardless-of-backend-data",
-      "featureTitle": "If the backend partner data (fetched via useGetPartners) returns more than 5 partners, cap the rendered list to the first 5 entries on the frontend so the UI never shows more than 5 partners regardless of backend data.",
-      "files": [
-        "frontend/src/components/Partners.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
       ],
       "confidence": "high"
     }

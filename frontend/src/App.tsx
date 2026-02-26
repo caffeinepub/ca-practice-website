@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Partners from './components/Partners';
 import Services from './components/Services';
-import Notifications from './components/Notifications';
 import GovernmentResources from './components/GovernmentResources';
 import TaxCalculators from './components/TaxCalculators';
 import LoanCalculators from './components/LoanCalculators';
@@ -21,7 +20,6 @@ function App() {
         <About />
         <Partners />
         <Services />
-        <Notifications />
         <GovernmentResources />
         <TaxCalculators />
         <LoanCalculators />

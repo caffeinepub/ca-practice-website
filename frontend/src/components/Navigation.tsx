@@ -12,7 +12,7 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 20);
 
       // Determine active section
-      const sections = ['home', 'about', 'partners', 'services', 'notifications', 'government-resources', 'tax-calculators', 'loan-calculators', 'contact'];
+      const sections = ['home', 'about', 'partners', 'services', 'government-resources', 'tax-calculators', 'loan-calculators', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -51,7 +51,6 @@ const Navigation = () => {
     { id: 'about', label: 'About' },
     { id: 'partners', label: 'Partners' },
     { id: 'services', label: 'Services' },
-    { id: 'notifications', label: 'Notifications' },
     { id: 'government-resources', label: 'Govt Resources' },
     { id: 'tax-calculators', label: 'Tax Calculators' },
     { id: 'loan-calculators', label: 'Loan Calculators' },

@@ -1,26 +1,16 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "New project",
+  "summary": "Project involves a deployed app (Version 18 in production) with partner profiles. User requested removal of the Government Notifications & Circulars section.",
   "architectural_notes": [],
-  "known_issues": [
-    "Partners list incorrectly shows more than 5 partners; should be capped at 5"
-  ],
-  "isFixRequest": true,
+  "known_issues": [],
+  "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-in-the-partners-component-ensure-the-static-partners-data-array-contains-exactly-5-partner-entries-remove-any-partner-entries-beyond-the-5th-so-that-no-more-than-5-partner-cards-are-ever-rendered-on-the-page",
-      "title": "In the Partners component, ensure the static partners data array contains exactly 5 partner entries. Remove any partner entries beyond the 5th so that no more than 5 partner cards are ever rendered on the page.",
+      "id": "feature-remove-the-government-notifications-circulars-section-from-the-website-this-includes-1-removing-the-notifications-component-from-app-tsx-2-removing-the-corresponding-navigation-link-entry-from-navigation-tsx-if-one-exists-for-this-section-and-3-ensuring-the-page-layout-remains-visually-coherent-after-removal",
+      "title": "Remove the Government Notifications & Circulars section from the website. This includes: (1) removing the <Notifications /> component from App.tsx, (2) removing the corresponding navigation link/entry from Navigation.tsx if one exists for this section, and (3) ensuring the page layout remains visually coherent after removal.",
       "reqIds": [
         "REQ-1"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-if-the-backend-partner-data-fetched-via-usegetpartners-returns-more-than-5-partners-cap-the-rendered-list-to-the-first-5-entries-on-the-frontend-so-the-ui-never-shows-more-than-5-partners-regardless-of-backend-data",
-      "title": "If the backend partner data (fetched via useGetPartners) returns more than 5 partners, cap the rendered list to the first 5 entries on the frontend so the UI never shows more than 5 partners regardless of backend data.",
-      "reqIds": [
-        "REQ-2"
       ],
       "version": 1
     }
@@ -28,12 +18,13 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Limit partners to exactly 5; remove any extra partner entries beyond 5",
+      "summary": "Remove Government Notifications & Circulars section",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "BR Bhandari & Co",
+  "gameProjectType": "none",
+  "projectName": "B R Bhandari & Co",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

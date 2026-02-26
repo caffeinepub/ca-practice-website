@@ -1,36 +1,27 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Limit partners list to exactly 5 entries",
+  "title": "Remove Government Notifications & Circulars section",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Ensure the static partners data array in Partners component contains exactly 5 partner entries, removing any entries beyond the 5th to prevent rendering more than 5 cards.",
+      "summary": "Remove the Government Notifications & Circulars section from the website by removing the Notifications component from App.tsx, removing navigation links from Navigation.tsx, and ensuring layout coherence",
       "acceptanceCriteria": [
-        "The Partners section displays exactly 5 partner cards — no more, no less.",
-        "No sixth or additional partner card is visible on the page.",
-        "All 5 displayed partner cards show correct names, designations, and details."
+        "The Notifications component is no longer rendered anywhere on the page.",
+        "No broken layout or empty whitespace gap appears where the section previously existed.",
+        "The navigation bar no longer contains a link to the Notifications/Circulars section.",
+        "All other page sections continue to render correctly."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Partners.tsx",
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Review the static partners data array and remove any partner entries beyond the 5th entry. Ensure the array contains exactly 5 partner objects so that only 5 partner cards are rendered on the page. Do not modify partner details (names, designations, specializations) — only cap the array length to 5."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Cap the rendered partner list to the first 5 entries when backend data (from useGetPartners) returns more than 5 partners, ensuring the UI never displays more than 5 partners regardless of backend data.",
-      "acceptanceCriteria": [
-        "When backend returns more than 5 partners, only the first 5 are rendered.",
-        "The partners section never shows more than 5 cards under any data condition."
-      ],
-      "file_operations": [
+          "description": "Remove the import statement for the Notifications component and remove the <Notifications /> component from the page layout composition, ensuring the remaining sections flow naturally without layout gaps"
+        },
         {
-          "path": "frontend/src/components/Partners.tsx",
+          "path": "frontend/src/components/Navigation.tsx",
           "operation": "modify",
-          "description": "Add logic to slice the partners array to a maximum of 5 entries before rendering. If useGetPartners returns backend data, apply `.slice(0, 5)` to cap the list. If using static data, ensure it never exceeds 5 entries. This ensures the UI always displays exactly 5 partners regardless of data source."
+          "description": "Remove any navigation link or menu item that references the Notifications/Circulars section, ensuring the navigation menu remains functional and properly styled after removal"
         }
       ]
     }

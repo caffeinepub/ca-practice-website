@@ -1,10 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Limit the Partners section to display exactly 5 partner cards, regardless of static data or backend response.
+**Goal:** Remove the Government Notifications & Circulars section from the website.
 
 **Planned changes:**
-- Ensure the static partners data array in the Partners component contains exactly 5 entries, removing any beyond the 5th
-- Cap the rendered partners list to the first 5 entries when data is fetched from the backend via `useGetPartners`
+- Remove the `<Notifications />` component from `App.tsx`
+- Remove the navigation link for the Notifications/Circulars section from `Navigation.tsx`
+- Ensure the page layout remains visually coherent after removal
 
-**User-visible outcome:** The Partners section always shows exactly 5 partner cards — no more, no less — under all data conditions.
+**User-visible outcome:** The website no longer displays the Government Notifications & Circulars section, and the navigation bar no longer contains a link to it. All other sections remain intact.

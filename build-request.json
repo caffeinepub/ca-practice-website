@@ -1,53 +1,37 @@
 {
   "kind": "build_request",
-  "title": "Limit partners list to exactly 5 entries",
-  "projectName": "BR Bhandari & Co",
+  "title": "Remove Government Notifications & Circulars section",
+  "projectName": "B R Bhandari & Co",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "In the Partners component, ensure the static partners data array contains exactly 5 partner entries. Remove any partner entries beyond the 5th so that no more than 5 partner cards are ever rendered on the page.",
+      "text": "Remove the Government Notifications & Circulars section from the website. This includes: (1) removing the <Notifications /> component from App.tsx, (2) removing the corresponding navigation link/entry from Navigation.tsx if one exists for this section, and (3) ensuring the page layout remains visually coherent after removal.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-6"
         ],
         "quotes": [
-          "only 5 partner is there. Not more than 5 partner"
+          "Remove Government Notifications & Circulars section."
         ]
       },
       "acceptanceCriteria": [
-        "The Partners section displays exactly 5 partner cards — no more, no less.",
-        "No sixth or additional partner card is visible on the page.",
-        "All 5 displayed partner cards show correct names, designations, and details."
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "If the backend partner data (fetched via useGetPartners) returns more than 5 partners, cap the rendered list to the first 5 entries on the frontend so the UI never shows more than 5 partners regardless of backend data.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-6"
-        ],
-        "quotes": [
-          "only 5 partner is there. Not more than 5 partner"
-        ]
-      },
-      "acceptanceCriteria": [
-        "When backend returns more than 5 partners, only the first 5 are rendered.",
-        "The partners section never shows more than 5 cards under any data condition."
+        "The Notifications component is no longer rendered anywhere on the page.",
+        "No broken layout or empty whitespace gap appears where the section previously existed.",
+        "The navigation bar no longer contains a link to the Notifications/Circulars section.",
+        "All other page sections continue to render correctly."
       ]
     }
   ],
   "constraints": [
-    "Do not change any partner details (names, designations, specializations) — only remove entries beyond the 5th.",
-    "The About section stat '5 partners' must remain consistent with the displayed count."
+    "Do not remove or modify the Notifications.tsx component file itself — only remove its usage from App.tsx and any navigation references.",
+    "Do not alter any other page sections or components unrelated to the Notifications section."
   ],
   "nonGoals": [
-    "Adding new partners or modifying existing partner profile information.",
-    "Changing the visual design or layout of the Partners section.",
-    "Backend schema or data model changes."
+    "Removing the backend notification logic or data model.",
+    "Modifying the GovernmentResources component or any other section.",
+    "Redesigning the overall page layout."
   ],
   "imageRequirements": {
     "required": [],

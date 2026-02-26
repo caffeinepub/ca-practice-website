@@ -1,35 +1,26 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-26T10:57:01.321Z",
+  "generatedAt": "2026-02-26T11:16:38.426Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "In the Partners component, ensure the static partners data array contains exactly 5 partner entries. Remove any partner entries beyond the 5th so that no more than 5 partner cards are ever rendered on the page.",
+        "summary": "Remove the Government Notifications & Circulars section from the website. This includes: (1) removing the <Notifications /> component from App.tsx, (2) removing the corresponding navigation link/entry from Navigation.tsx if one exists for this section, and (3) ensuring the page layout remains visually coherent after removal.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/Partners.tsx"
+          "frontend/src/App.tsx",
+          "frontend/src/components/Navigation.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/Partners.tsx"
-        ]
-      },
-      {
-        "id": "REQ-2",
-        "summary": "If the backend partner data (fetched via useGetPartners) returns more than 5 partners, cap the rendered list to the first 5 entries on the frontend so the UI never shows more than 5 partners regardless of backend data.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/Partners.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/Partners.tsx"
+          "frontend/src/App.tsx",
+          "frontend/src/components/Navigation.tsx"
         ]
       }
     ]
@@ -39,7 +30,8 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/Partners.tsx",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Navigation.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
