@@ -1,0 +1,40 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T09:47:39.800Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Add the uploaded photo (UMB PHOTO.jpg) as a partner profile image in the Partners section. Store the image as a static asset at frontend/public/assets/generated/umb-photo.jpg and display it in the Partners component as the profile picture for the corresponding partner entry.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/umb-photo.dim_400x400.jpg",
+          "frontend/src/components/Partners.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/umb-photo.dim_400x400.jpg",
+          "frontend/src/components/Partners.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/umb-photo.dim_400x400.jpg",
+    "frontend/src/components/Partners.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "build_request",
+  "title": "Add uploaded partner photo to Partners section",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Add the uploaded photo (UMB PHOTO.jpg) as a partner profile image in the Partners section. Store the image as a static asset at frontend/public/assets/generated/umb-photo.jpg and display it in the Partners component as the profile picture for the corresponding partner entry.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The user has uploaded 1 image(s): UMB PHOTO.jpg"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The image UMB PHOTO.jpg is saved as frontend/public/assets/generated/umb-photo.jpg",
+        "The Partners section displays the photo as a partner's profile picture",
+        "The photo renders correctly on desktop and mobile layouts"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files listed in frontend.immutablePaths",
+    "Preserve the CA India logo style as noted in project state"
+  ],
+  "nonGoals": [
+    "Editing or modifying backend partner data schema",
+    "Changing the overall visual theme or layout of the Partners section"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": [
+      "Crop to a clean square headshot with neutral background (UMB PHOTO.jpg > umb-photo.dim_400x400.jpg)"
+    ]
+  }
+}
