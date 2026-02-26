@@ -1,10 +1,9 @@
 # Specification
 
 ## Summary
-**Goal:** Add the uploaded partner photo (UMB PHOTO.jpg) as a profile picture for a partner entry in the Partners section.
+**Goal:** Correct the spelling of a partner's name to "Poonam Punamiya" in the Partners section.
 
 **Planned changes:**
-- Save the uploaded photo as a static asset at `frontend/public/assets/generated/umb-photo.jpg`
-- Update the Partners component to use this image as the profile picture for the corresponding partner entry
+- Update the partner name field for Poonam Punamiya in the static partners data array in `Partners.tsx` to read "Poonam Punamiya" exactly.
 
-**User-visible outcome:** The Partners section displays the uploaded photo as a partner's profile picture, rendering correctly on both desktop and mobile layouts.
+**User-visible outcome:** The Partners section displays the correct name "Poonam Punamiya" on her partner card, with all other details unchanged.

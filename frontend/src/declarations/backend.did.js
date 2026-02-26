@@ -18,6 +18,11 @@ export const NotificationCategory = IDL.Variant({
   'SEBI' : IDL.Null,
   'FinanceMarket' : IDL.Null,
 });
+export const UserRole = IDL.Variant({
+  'admin' : IDL.Null,
+  'user' : IDL.Null,
+  'guest' : IDL.Null,
+});
 export const Time = IDL.Int;
 export const Contact = IDL.Record({
   'name' : IDL.Text,
@@ -35,20 +40,24 @@ export const Notification = IDL.Record({
 });
 export const Partner = IDL.Record({
   'id' : IDL.Nat,
-  'bio' : IDL.Text,
   'name' : IDL.Text,
-  'photoUrl' : IDL.Text,
-  'expertise' : IDL.Vec(IDL.Text),
+  'designation' : IDL.Text,
+  'qualifications' : IDL.Text,
+  'experienceYears' : IDL.Nat,
+  'specialization' : IDL.Vec(IDL.Text),
 });
 
 export const idlService = IDL.Service({
+  '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
   'addNotification' : IDL.Func(
       [IDL.Text, IDL.Text, NotificationCategory],
       [IDL.Nat],
       [],
     ),
+  'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
   'getAllContacts' : IDL.Func([], [IDL.Vec(Contact)], ['query']),
   'getAllNotifications' : IDL.Func([], [IDL.Vec(Notification)], ['query']),
+  'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
   'getContact' : IDL.Func([IDL.Nat], [IDL.Opt(Contact)], ['query']),
   'getContactCount' : IDL.Func([], [IDL.Nat], ['query']),
   'getNotification' : IDL.Func([IDL.Nat], [IDL.Opt(Notification)], ['query']),
@@ -58,6 +67,7 @@ export const idlService = IDL.Service({
       ['query'],
     ),
   'getPartners' : IDL.Func([], [IDL.Vec(Partner)], ['query']),
+  'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
   'submitContact' : IDL.Func(
       [IDL.Text, IDL.Text, IDL.Text, IDL.Text],
       [IDL.Nat],
@@ -78,6 +88,11 @@ export const idlFactory = ({ IDL }) => {
     'SEBI' : IDL.Null,
     'FinanceMarket' : IDL.Null,
   });
+  const UserRole = IDL.Variant({
+    'admin' : IDL.Null,
+    'user' : IDL.Null,
+    'guest' : IDL.Null,
+  });
   const Time = IDL.Int;
   const Contact = IDL.Record({
     'name' : IDL.Text,
@@ -95,20 +110,24 @@ export const idlFactory = ({ IDL }) => {
   });
   const Partner = IDL.Record({
     'id' : IDL.Nat,
-    'bio' : IDL.Text,
     'name' : IDL.Text,
-    'photoUrl' : IDL.Text,
-    'expertise' : IDL.Vec(IDL.Text),
+    'designation' : IDL.Text,
+    'qualifications' : IDL.Text,
+    'experienceYears' : IDL.Nat,
+    'specialization' : IDL.Vec(IDL.Text),
   });
   
   return IDL.Service({
+    '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
     'addNotification' : IDL.Func(
         [IDL.Text, IDL.Text, NotificationCategory],
         [IDL.Nat],
         [],
       ),
+    'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
     'getAllContacts' : IDL.Func([], [IDL.Vec(Contact)], ['query']),
     'getAllNotifications' : IDL.Func([], [IDL.Vec(Notification)], ['query']),
+    'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
     'getContact' : IDL.Func([IDL.Nat], [IDL.Opt(Contact)], ['query']),
     'getContactCount' : IDL.Func([], [IDL.Nat], ['query']),
     'getNotification' : IDL.Func([IDL.Nat], [IDL.Opt(Notification)], ['query']),
@@ -118,6 +137,7 @@ export const idlFactory = ({ IDL }) => {
         ['query'],
       ),
     'getPartners' : IDL.Func([], [IDL.Vec(Partner)], ['query']),
+    'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
     'submitContact' : IDL.Func(
         [IDL.Text, IDL.Text, IDL.Text, IDL.Text],
         [IDL.Nat],

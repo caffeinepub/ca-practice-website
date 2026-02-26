@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-the-uploaded-photo-umb-photo-jpg-as-a-partner-profile-image-in-the-partners-section-store-the-image-as-a-static-asset-at-frontend-public-assets-generated-umb-photo-jpg-and-display-it-in-the-partners-component-as-the-profile-picture-for-the-corresponding-partner-entry",
-      "featureTitle": "Add the uploaded photo (UMB PHOTO.jpg) as a partner profile image in the Partners section. Store the image as a static asset at frontend/public/assets/generated/umb-photo.jpg and display it in the Partners component as the profile picture for the corresponding partner entry.",
+      "featureId": "feature-in-the-partners-component-frontend-src-components-partners-tsx-update-the-partner-name-from-the-current-incorrect-spelling-to-poonam-punamiya-in-the-static-partners-data-array",
+      "featureTitle": "In the Partners component (frontend/src/components/Partners.tsx), update the partner name from the current incorrect spelling to 'Poonam Punamiya' in the static partners data array.",
       "files": [
         "frontend/src/components/Partners.tsx"
       ],
@@ -12,7 +12,8 @@
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
       ],
       "testIds": [
         "REQ-1"

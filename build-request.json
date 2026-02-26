@@ -1,39 +1,38 @@
 {
   "kind": "build_request",
-  "title": "Add uploaded partner photo to Partners section",
+  "title": "Rectify partner name to Poonam Punamiya",
+  "projectName": "B R Bhandari & Co",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Add the uploaded photo (UMB PHOTO.jpg) as a partner profile image in the Partners section. Store the image as a static asset at frontend/public/assets/generated/umb-photo.jpg and display it in the Partners component as the profile picture for the corresponding partner entry.",
+      "text": "In the Partners component (frontend/src/components/Partners.tsx), update the partner name from the current incorrect spelling to 'Poonam Punamiya' in the static partners data array.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-4"
         ],
         "quotes": [
-          "The user has uploaded 1 image(s): UMB PHOTO.jpg"
+          "Rectify partner name- Poonam Punamiya"
         ]
       },
       "acceptanceCriteria": [
-        "The image UMB PHOTO.jpg is saved as frontend/public/assets/generated/umb-photo.jpg",
-        "The Partners section displays the photo as a partner's profile picture",
-        "The photo renders correctly on desktop and mobile layouts"
+        "The Partners section displays the name 'Poonam Punamiya' exactly as specified.",
+        "No other partner names or data are altered.",
+        "The partner card for Poonam Punamiya renders correctly with all existing details (photo, designation, specializations, experience) intact."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files listed in frontend.immutablePaths",
-    "Preserve the CA India logo style as noted in project state"
+    "Only the partner name field for Poonam Punamiya should be changed; all other partner data must remain untouched."
   ],
   "nonGoals": [
-    "Editing or modifying backend partner data schema",
-    "Changing the overall visual theme or layout of the Partners section"
+    "Modifying any other partner profiles.",
+    "Changing backend partner data or any backend logic.",
+    "Altering the Partners component layout or styling."
   ],
   "imageRequirements": {
     "required": [],
-    "edits": [
-      "Crop to a clean square headshot with neutral background (UMB PHOTO.jpg > umb-photo.dim_400x400.jpg)"
-    ]
+    "edits": []
   }
 }

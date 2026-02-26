@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-26T09:47:39.800Z",
+  "generatedAt": "2026-02-26T10:37:07.762Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -12,14 +12,12 @@
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Add the uploaded photo (UMB PHOTO.jpg) as a partner profile image in the Partners section. Store the image as a static asset at frontend/public/assets/generated/umb-photo.jpg and display it in the Partners component as the profile picture for the corresponding partner entry.",
+        "summary": "In the Partners component (frontend/src/components/Partners.tsx), update the partner name from the current incorrect spelling to 'Poonam Punamiya' in the static partners data array.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/generated/umb-photo.dim_400x400.jpg",
           "frontend/src/components/Partners.tsx"
         ],
         "matchedFiles": [
-          "frontend/public/assets/generated/umb-photo.dim_400x400.jpg",
           "frontend/src/components/Partners.tsx"
         ]
       }
@@ -30,7 +28,6 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/umb-photo.dim_400x400.jpg",
     "frontend/src/components/Partners.tsx",
     "project_state.json",
     "scratch/component-selection.json",

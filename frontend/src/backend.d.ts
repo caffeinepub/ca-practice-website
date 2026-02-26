@@ -9,10 +9,11 @@ export interface None {
 export type Option<T> = Some<T> | None;
 export interface Partner {
     id: bigint;
-    bio: string;
     name: string;
-    photoUrl: string;
-    expertise: Array<string>;
+    designation: string;
+    qualifications: string;
+    experienceYears: bigint;
+    specialization: Array<string>;
 }
 export type Time = bigint;
 export interface Contact {
@@ -39,14 +40,22 @@ export enum NotificationCategory {
     SEBI = "SEBI",
     FinanceMarket = "FinanceMarket"
 }
+export enum UserRole {
+    admin = "admin",
+    user = "user",
+    guest = "guest"
+}
 export interface backendInterface {
     addNotification(title: string, body: string, category: NotificationCategory): Promise<bigint>;
+    assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
     getAllContacts(): Promise<Array<Contact>>;
     getAllNotifications(): Promise<Array<Notification>>;
+    getCallerUserRole(): Promise<UserRole>;
     getContact(id: bigint): Promise<Contact | null>;
     getContactCount(): Promise<bigint>;
     getNotification(id: bigint): Promise<Notification | null>;
     getNotificationsByCategory(category: NotificationCategory): Promise<Array<Notification>>;
     getPartners(): Promise<Array<Partner>>;
+    isCallerAdmin(): Promise<boolean>;
     submitContact(name: string, email: string, phone: string, message: string): Promise<bigint>;
 }

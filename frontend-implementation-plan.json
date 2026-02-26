@@ -1,26 +1,21 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add uploaded partner photo to Partners section",
+  "title": "Rectify partner name to Poonam Punamiya",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Add the uploaded photo UMB PHOTO.jpg as a partner profile image in the Partners section, storing it as a static asset and displaying it in the Partners component",
+      "summary": "Update the partner name in the Partners component from the current incorrect spelling to 'Poonam Punamiya' in the static partners data array",
       "acceptanceCriteria": [
-        "The image UMB PHOTO.jpg is saved as frontend/public/assets/generated/umb-photo.jpg",
-        "The Partners section displays the photo as a partner's profile picture",
-        "The photo renders correctly on desktop and mobile layouts"
+        "The Partners section displays the name 'Poonam Punamiya' exactly as specified.",
+        "No other partner names or data are altered.",
+        "The partner card for Poonam Punamiya renders correctly with all existing details (photo, designation, specializations, experience) intact."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/umb-photo.dim_400x400.jpg",
-          "operation": "create",
-          "description": "Add the cropped and optimized partner photo from UMB PHOTO.jpg as a 400x400 square headshot with neutral background. This image will be used as a profile picture in the Partners component."
-        },
-        {
           "path": "frontend/src/components/Partners.tsx",
           "operation": "modify",
-          "description": "Update the Partners component to display the newly added partner photo at frontend/public/assets/generated/umb-photo.dim_400x400.jpg. Ensure the photo is rendered with the same styling and responsive behavior as existing partner images, maintaining consistency with the current grid layout and image aspect ratios."
+          "description": "Update the partner name field for Poonam Punamiya to the correct spelling 'Poonam Punamiya' in the static partners data array. Locate the partner object that contains the incorrect spelling and update only the name property to 'Poonam Punamiya', leaving all other properties (designation, specialization, experienceYears, image) unchanged."
         }
       ]
     }

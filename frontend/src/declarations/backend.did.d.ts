@@ -34,19 +34,26 @@ export type NotificationCategory = { 'GST' : null } |
   { 'FinanceMarket' : null };
 export interface Partner {
   'id' : bigint,
-  'bio' : string,
   'name' : string,
-  'photoUrl' : string,
-  'expertise' : Array<string>,
+  'designation' : string,
+  'qualifications' : string,
+  'experienceYears' : bigint,
+  'specialization' : Array<string>,
 }
 export type Time = bigint;
+export type UserRole = { 'admin' : null } |
+  { 'user' : null } |
+  { 'guest' : null };
 export interface _SERVICE {
+  '_initializeAccessControlWithSecret' : ActorMethod<[string], undefined>,
   'addNotification' : ActorMethod<
     [string, string, NotificationCategory],
     bigint
   >,
+  'assignCallerUserRole' : ActorMethod<[Principal, UserRole], undefined>,
   'getAllContacts' : ActorMethod<[], Array<Contact>>,
   'getAllNotifications' : ActorMethod<[], Array<Notification>>,
+  'getCallerUserRole' : ActorMethod<[], UserRole>,
   'getContact' : ActorMethod<[bigint], [] | [Contact]>,
   'getContactCount' : ActorMethod<[], bigint>,
   'getNotification' : ActorMethod<[bigint], [] | [Notification]>,
@@ -55,6 +62,7 @@ export interface _SERVICE {
     Array<Notification>
   >,
   'getPartners' : ActorMethod<[], Array<Partner>>,
+  'isCallerAdmin' : ActorMethod<[], boolean>,
   'submitContact' : ActorMethod<[string, string, string, string], bigint>,
 }
 export declare const idlService: IDL.ServiceClass;
