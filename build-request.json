@@ -1,35 +1,53 @@
 {
   "kind": "build_request",
-  "title": "Rectify partner name to Poonam Punamiya",
-  "projectName": "B R Bhandari & Co",
+  "title": "Limit partners list to exactly 5 entries",
+  "projectName": "BR Bhandari & Co",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "In the Partners component (frontend/src/components/Partners.tsx), update the partner name from the current incorrect spelling to 'Poonam Punamiya' in the static partners data array.",
+      "text": "In the Partners component, ensure the static partners data array contains exactly 5 partner entries. Remove any partner entries beyond the 5th so that no more than 5 partner cards are ever rendered on the page.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-6"
         ],
         "quotes": [
-          "Rectify partner name- Poonam Punamiya"
+          "only 5 partner is there. Not more than 5 partner"
         ]
       },
       "acceptanceCriteria": [
-        "The Partners section displays the name 'Poonam Punamiya' exactly as specified.",
-        "No other partner names or data are altered.",
-        "The partner card for Poonam Punamiya renders correctly with all existing details (photo, designation, specializations, experience) intact."
+        "The Partners section displays exactly 5 partner cards — no more, no less.",
+        "No sixth or additional partner card is visible on the page.",
+        "All 5 displayed partner cards show correct names, designations, and details."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "If the backend partner data (fetched via useGetPartners) returns more than 5 partners, cap the rendered list to the first 5 entries on the frontend so the UI never shows more than 5 partners regardless of backend data.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "only 5 partner is there. Not more than 5 partner"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When backend returns more than 5 partners, only the first 5 are rendered.",
+        "The partners section never shows more than 5 cards under any data condition."
       ]
     }
   ],
   "constraints": [
-    "Only the partner name field for Poonam Punamiya should be changed; all other partner data must remain untouched."
+    "Do not change any partner details (names, designations, specializations) — only remove entries beyond the 5th.",
+    "The About section stat '5 partners' must remain consistent with the displayed count."
   ],
   "nonGoals": [
-    "Modifying any other partner profiles.",
-    "Changing backend partner data or any backend logic.",
-    "Altering the Partners component layout or styling."
+    "Adding new partners or modifying existing partner profile information.",
+    "Changing the visual design or layout of the Partners section.",
+    "Backend schema or data model changes."
   ],
   "imageRequirements": {
     "required": [],

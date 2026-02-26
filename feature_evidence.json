@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-the-partners-component-frontend-src-components-partners-tsx-update-the-partner-name-from-the-current-incorrect-spelling-to-poonam-punamiya-in-the-static-partners-data-array",
-      "featureTitle": "In the Partners component (frontend/src/components/Partners.tsx), update the partner name from the current incorrect spelling to 'Poonam Punamiya' in the static partners data array.",
+      "featureId": "feature-in-the-partners-component-ensure-the-static-partners-data-array-contains-exactly-5-partner-entries-remove-any-partner-entries-beyond-the-5th-so-that-no-more-than-5-partner-cards-are-ever-rendered-on-the-page",
+      "featureTitle": "In the Partners component, ensure the static partners data array contains exactly 5 partner entries. Remove any partner entries beyond the 5th so that no more than 5 partner cards are ever rendered on the page.",
       "files": [
         "frontend/src/components/Partners.tsx"
       ],
@@ -17,6 +17,25 @@
       ],
       "testIds": [
         "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-if-the-backend-partner-data-fetched-via-usegetpartners-returns-more-than-5-partners-cap-the-rendered-list-to-the-first-5-entries-on-the-frontend-so-the-ui-never-shows-more-than-5-partners-regardless-of-backend-data",
+      "featureTitle": "If the backend partner data (fetched via useGetPartners) returns more than 5 partners, cap the rendered list to the first 5 entries on the frontend so the UI never shows more than 5 partners regardless of backend data.",
+      "files": [
+        "frontend/src/components/Partners.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
       ],
       "confidence": "high"
     }

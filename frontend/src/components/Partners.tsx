@@ -2,7 +2,6 @@ import { useGetPartners } from '@/hooks/useQueries';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import type { Partner } from '../backend';
 
 interface StaticPartner {
   id: string;
@@ -61,6 +60,9 @@ const staticPartners: StaticPartner[] = [
     photoUrl: '/assets/generated/partner-vinay.dim_400x400.png',
   },
 ];
+
+// Always cap to exactly 5 partners
+const displayedPartners = staticPartners.slice(0, 5);
 
 function getInitials(name: string): string {
   return name
@@ -130,13 +132,7 @@ function PartnerCard({
 }
 
 const Partners = () => {
-  const { data: backendPartners, isLoading } = useGetPartners();
-
-  // Deduplicate: backend partners whose names match static partners are skipped
-  const staticNames = new Set(staticPartners.map((p) => p.name.toLowerCase().trim()));
-  const uniqueBackendPartners: Partner[] = (backendPartners ?? []).filter(
-    (bp) => !staticNames.has(bp.name.toLowerCase().trim()),
-  );
+  const { isLoading } = useGetPartners();
 
   return (
     <section id="partners" className="py-20 bg-muted/30">
@@ -172,8 +168,7 @@ const Partners = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Static partners — exactly 5 */}
-            {staticPartners.map((partner) => (
+            {displayedPartners.map((partner) => (
               <PartnerCard
                 key={partner.id}
                 name={partner.name}
@@ -182,18 +177,6 @@ const Partners = () => {
                 specialization={partner.specialization}
                 experienceYears={partner.experienceYears}
                 photoUrl={partner.photoUrl}
-              />
-            ))}
-
-            {/* Backend-only partners (not duplicating static ones) */}
-            {uniqueBackendPartners.map((partner) => (
-              <PartnerCard
-                key={String(partner.id)}
-                name={partner.name}
-                designation={partner.designation}
-                qualifications={partner.qualifications}
-                specialization={partner.specialization}
-                experienceYears={`${partner.experienceYears}+`}
               />
             ))}
           </div>

@@ -3,14 +3,24 @@
   "projectStateVersion": 3,
   "summary": "New project",
   "architectural_notes": [],
-  "known_issues": [],
+  "known_issues": [
+    "Partners list incorrectly shows more than 5 partners; should be capped at 5"
+  ],
   "isFixRequest": true,
   "existing_features": [
     {
-      "id": "feature-in-the-partners-component-frontend-src-components-partners-tsx-update-the-partner-name-from-the-current-incorrect-spelling-to-poonam-punamiya-in-the-static-partners-data-array",
-      "title": "In the Partners component (frontend/src/components/Partners.tsx), update the partner name from the current incorrect spelling to 'Poonam Punamiya' in the static partners data array.",
+      "id": "feature-in-the-partners-component-ensure-the-static-partners-data-array-contains-exactly-5-partner-entries-remove-any-partner-entries-beyond-the-5th-so-that-no-more-than-5-partner-cards-are-ever-rendered-on-the-page",
+      "title": "In the Partners component, ensure the static partners data array contains exactly 5 partner entries. Remove any partner entries beyond the 5th so that no more than 5 partner cards are ever rendered on the page.",
       "reqIds": [
         "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-if-the-backend-partner-data-fetched-via-usegetpartners-returns-more-than-5-partners-cap-the-rendered-list-to-the-first-5-entries-on-the-frontend-so-the-ui-never-shows-more-than-5-partners-regardless-of-backend-data",
+      "title": "If the backend partner data (fetched via useGetPartners) returns more than 5 partners, cap the rendered list to the first 5 entries on the frontend so the UI never shows more than 5 partners regardless of backend data.",
+      "reqIds": [
+        "REQ-2"
       ],
       "version": 1
     }
@@ -18,12 +28,12 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Rectify partner name to 'Poonam Punamiya'",
+      "summary": "Limit partners to exactly 5; remove any extra partner entries beyond 5",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "B R Bhandari & Co",
+  "projectName": "BR Bhandari & Co",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

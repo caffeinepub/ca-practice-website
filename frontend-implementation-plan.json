@@ -1,21 +1,36 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Rectify partner name to Poonam Punamiya",
+  "title": "Limit partners list to exactly 5 entries",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Update the partner name in the Partners component from the current incorrect spelling to 'Poonam Punamiya' in the static partners data array",
+      "summary": "Ensure the static partners data array in Partners component contains exactly 5 partner entries, removing any entries beyond the 5th to prevent rendering more than 5 cards.",
       "acceptanceCriteria": [
-        "The Partners section displays the name 'Poonam Punamiya' exactly as specified.",
-        "No other partner names or data are altered.",
-        "The partner card for Poonam Punamiya renders correctly with all existing details (photo, designation, specializations, experience) intact."
+        "The Partners section displays exactly 5 partner cards — no more, no less.",
+        "No sixth or additional partner card is visible on the page.",
+        "All 5 displayed partner cards show correct names, designations, and details."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/Partners.tsx",
           "operation": "modify",
-          "description": "Update the partner name field for Poonam Punamiya to the correct spelling 'Poonam Punamiya' in the static partners data array. Locate the partner object that contains the incorrect spelling and update only the name property to 'Poonam Punamiya', leaving all other properties (designation, specialization, experienceYears, image) unchanged."
+          "description": "Review the static partners data array and remove any partner entries beyond the 5th entry. Ensure the array contains exactly 5 partner objects so that only 5 partner cards are rendered on the page. Do not modify partner details (names, designations, specializations) — only cap the array length to 5."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Cap the rendered partner list to the first 5 entries when backend data (from useGetPartners) returns more than 5 partners, ensuring the UI never displays more than 5 partners regardless of backend data.",
+      "acceptanceCriteria": [
+        "When backend returns more than 5 partners, only the first 5 are rendered.",
+        "The partners section never shows more than 5 cards under any data condition."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Partners.tsx",
+          "operation": "modify",
+          "description": "Add logic to slice the partners array to a maximum of 5 entries before rendering. If useGetPartners returns backend data, apply `.slice(0, 5)` to cap the list. If using static data, ensure it never exceeds 5 entries. This ensures the UI always displays exactly 5 partners regardless of data source."
         }
       ]
     }
